@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dykjtlod7uep2"]
+
+[ext_resource type="Script" uid="uid://o81227t1vqif" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
+
+[node name="MainMenu" type="Control" unique_id=1259175371]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sl1te")
+
+[node name="NOT IMPLEMENTED YET" type="Label" parent="." unique_id=1078514778]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+text = "NOT IMPLEMENTED YET, PLEASE CHECK BACK LATER!"
