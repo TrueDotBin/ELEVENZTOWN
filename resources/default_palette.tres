@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UIPalette" format=3 uid="uid://tnwt2i4yy4ov"]
+
+[ext_resource type="Script" uid="uid://tw3j60087u82" path="res://scripts/resources/ui_palette.gd" id="1_82cnh"]
+[ext_resource type="Theme" uid="uid://bq276l1ov3bdu" path="res://resources/theme.tres" id="2_ccww0"]
+
+[resource]
+script = ExtResource("1_82cnh")
+primary_background = Color(2.4065375e-08, 0.19827679, 0.4825328, 1)
+secondary_background = Color(0, 0.101960786, 0.31764707, 1)
+foreground = Color(0.7176471, 0.85490197, 0.85490197, 1)
+accent = Color(0, 0.4392157, 0.6627451, 1)
+danger = Color(0.78431374, 0.08627451, 0.12156863, 1)
+warning = Color(1, 0.47058824, 0.1882353, 1)
+success = Color(0.2901961, 0.6392157, 0.1764706, 1)
+target_theme = ExtResource("2_ccww0")
+metadata/_custom_type_script = "uid://tw3j60087u82"
