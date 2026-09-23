@@ -12,6 +12,7 @@ config_version=5
 
 config/name="ELEVENZTOWN"
 config/version="2026.0.0"
+run/main_scene="uid://c02djnhoqgijo"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [audio]
