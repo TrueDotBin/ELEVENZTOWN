@@ -5,10 +5,10 @@
 
 [resource]
 script = ExtResource("1_82cnh")
-primary_background = Color(2.4065375e-08, 0.19827679, 0.4825328, 1)
-secondary_background = Color(0, 0.101960786, 0.31764707, 1)
-foreground = Color(0.7176471, 0.85490197, 0.85490197, 1)
-accent = Color(0, 0.4392157, 0.6627451, 1)
+primary_background = Color(0.047058824, 0.08627451, 0.48235294, 1)
+secondary_background = Color(0, 0.20392157, 0.45882353, 1)
+foreground = Color(0.8117647, 0.85490197, 0.85490197, 1)
+accent = Color(0, 0.3137255, 0.6627451, 1)
 danger = Color(0.78431374, 0.08627451, 0.12156863, 1)
 warning = Color(1, 0.47058824, 0.1882353, 1)
 success = Color(0.2901961, 0.6392157, 0.1764706, 1)
