@@ -20,6 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("1_5rfrr")
+autoplay = true
 expand = true
 
 [connection signal="finished" from="Video" to="." method="_on_video_finished"]
