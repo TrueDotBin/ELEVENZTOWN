@@ -12,4 +12,6 @@ func _ready() -> void:
 
 func quit_game() -> void:
     print("[ELEVENZTOWN] Quitting...")
+
+    SettingsManager.save_settings()
     get_tree().quit()

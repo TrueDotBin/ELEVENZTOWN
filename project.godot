@@ -13,6 +13,8 @@ config_version=5
 config/name="ELEVENZTOWN"
 config/version="2026.0.0"
 run/main_scene="uid://c02djnhoqgijo"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="ELEVENZTOWN"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
@@ -23,6 +25,7 @@ buses/default_bus_layout="uid://cdt6pprvu0of3"
 
 [autoload]
 
+SettingsManager="*uid://ejsm6md6eody"
 AudioManager="*uid://byqo2wn5oen15"
 AudioLibrary="*uid://bdsdxp32rajh3"
 TweenManager="*uid://c7pmgvpsedlfa"
