@@ -170,6 +170,21 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="FontVariation" id="FontVariation_d4nwg"]
+base_font = ExtResource("1_d4nwg")
+variation_opentype = {
+1869640570: 14,
+2003265652: 700
+}
+variation_transform = Transform2D(1, 0.15, 0, 1, 0, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_7ct1h"]
+base_font = ExtResource("1_d4nwg")
+variation_transform = Transform2D(1, 0.15, 0, 1, 0, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_886mr"]
+base_font = ExtResource("1_d4nwg")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udp68"]
 content_margin_left = 10.0
 content_margin_top = 10.0
@@ -349,6 +364,9 @@ DangerButton/styles/normal = SubResource("StyleBoxFlat_yp2uj")
 DangerButton/styles/pressed = SubResource("StyleBoxFlat_dhnw2")
 Label/colors/font_color = Color(0.8117647, 0.85490197, 0.85490197, 1)
 Panel/styles/panel = SubResource("StyleBoxFlat_iojti")
+RichTextLabel/fonts/bold_italics_font = SubResource("FontVariation_d4nwg")
+RichTextLabel/fonts/italics_font = SubResource("FontVariation_7ct1h")
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_886mr")
 SuccessButton/base_type = &"Button"
 SuccessButton/styles/focus = SubResource("StyleBoxFlat_udp68")
 SuccessButton/styles/hover = SubResource("StyleBoxFlat_vidcg")
