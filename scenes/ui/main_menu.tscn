@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://o81227t1vqif" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
 [ext_resource type="Texture2D" uid="uid://clqflvu547vxd" path="res://assets/sprites/logo.png" id="2_fe2o3"]
+[ext_resource type="Script" uid="uid://b6j5p04obed2e" path="res://scripts/ui/logo.gd" id="3_1g8jr"]
 
 [node name="MainMenu" type="Control" unique_id=1259175371]
 layout_mode = 3
@@ -15,13 +16,16 @@ script = ExtResource("1_sl1te")
 [node name="Logo" type="TextureRect" parent="." unique_id=778334161]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.030000001
-anchor_top = 0.054
-anchor_right = 0.030000001
-anchor_bottom = 0.054
-offset_left = 0.43999863
-offset_top = 0.00799942
-offset_right = 456.44
-offset_bottom = 100.007996
-scale = Vector2(1.5, 1.5)
+anchor_left = 0.043
+anchor_top = 0.07700001
+anchor_right = 0.043
+anchor_bottom = 0.07700001
+offset_left = 0.4639969
+offset_top = 0.10399628
+offset_right = 456.464
+offset_bottom = 100.104
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("2_fe2o3")
+script = ExtResource("3_1g8jr")
+rotation_speed = 1.5
+rotation_amplitude = 1.0
