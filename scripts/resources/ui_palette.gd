@@ -71,7 +71,7 @@ func _pressed_button(base: StyleBoxFlat) -> StyleBoxFlat:
 func _focus_button(base: StyleBoxFlat) -> StyleBoxFlat:
     var focus_button = base.duplicate()
     focus_button.bg_color = Color.TRANSPARENT
-    focus_button.border_color = accent
+    focus_button.border_color = base.bg_color.lightened(0.25)
     focus_button.border_width_left = 2
     focus_button.border_width_right = 2
     focus_button.border_width_top = 2
