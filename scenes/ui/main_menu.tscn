@@ -1,8 +1,18 @@
 [gd_scene format=3 uid="uid://dykjtlod7uep2"]
 
 [ext_resource type="Script" uid="uid://o81227t1vqif" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
-[ext_resource type="Texture2D" uid="uid://clqflvu547vxd" path="res://assets/sprites/logo.png" id="2_fe2o3"]
+[ext_resource type="Shader" uid="uid://cpnxurm2s6uu2" path="res://shaders/brightness.gdshader" id="2_btxxm"]
+[ext_resource type="Texture2D" uid="uid://clqflvu547vxd" path="res://assets/sprites/menu/logo.png" id="2_fe2o3"]
 [ext_resource type="Script" uid="uid://b6j5p04obed2e" path="res://scripts/ui/logo.gd" id="3_1g8jr"]
+[ext_resource type="Texture2D" uid="uid://ci3f54uu4stw3" path="res://assets/sprites/menu/menu_bg.png" id="3_wb0q5"]
+[ext_resource type="Script" uid="uid://dkescnstkjc1s" path="res://scripts/ui/effects/button_effects.gd" id="4_m1kxf"]
+[ext_resource type="Script" uid="uid://ddejpkse8lx4" path="res://scripts/ui/background.gd" id="4_q85j6"]
+[ext_resource type="Texture2D" uid="uid://dj4xhtl4wkrxh" path="res://assets/sprites/menu/menu_elevenz.png" id="7_q85j6"]
+[ext_resource type="Script" uid="uid://n4l0nxrdt7nv" path="res://scripts/ui/version_label.gd" id="8_wb0q5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8g5eo"]
+shader = ExtResource("2_btxxm")
+shader_parameter/brightness = -0.24999996437500005
 
 [node name="MainMenu" type="Control" unique_id=1259175371]
 layout_mode = 3
@@ -12,6 +22,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sl1te")
+
+[node name="Background" type="TextureRect" parent="." unique_id=43827592]
+material = SubResource("ShaderMaterial_8g5eo")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.04, 1.04)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_wb0q5")
+stretch_mode = 6
+script = ExtResource("4_q85j6")
+movement_speed = 0.5
+movement_strength = 12.0
 
 [node name="Logo" type="TextureRect" parent="." unique_id=778334161]
 layout_mode = 1
@@ -29,3 +55,72 @@ texture = ExtResource("2_fe2o3")
 script = ExtResource("3_1g8jr")
 rotation_speed = 1.5
 rotation_amplitude = 1.0
+
+[node name="ElevenZ" type="TextureRect" parent="." unique_id=1187874868]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.44500002
+anchor_top = 0.27
+anchor_right = 0.90300006
+anchor_bottom = 1.0
+offset_left = 0.35998535
+offset_top = 0.039993286
+offset_right = -0.25610352
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0, 1)
+texture = ExtResource("7_q85j6")
+expand_mode = 2
+
+[node name="ButtonContainer" type="VBoxContainer" parent="." unique_id=1306392605]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.043
+anchor_top = 0.27800003
+anchor_right = 0.35300002
+anchor_bottom = 0.799
+offset_left = 0.4639969
+offset_top = -0.14401245
+offset_right = 0.34399414
+offset_bottom = 0.24798584
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="ButtonContainer" unique_id=481939839]
+layout_mode = 2
+theme_type_variation = &"SuccessButton"
+text = "play!"
+script = ExtResource("4_m1kxf")
+
+[node name="OptionsButton" type="Button" parent="ButtonContainer" unique_id=738361533]
+layout_mode = 2
+text = "options"
+script = ExtResource("4_m1kxf")
+
+[node name="CreditsButton" type="Button" parent="ButtonContainer" unique_id=1612724899]
+layout_mode = 2
+text = "credits"
+script = ExtResource("4_m1kxf")
+
+[node name="LeaveButton" type="Button" parent="ButtonContainer" unique_id=636022842]
+layout_mode = 2
+theme_type_variation = &"DangerButton"
+text = "leave"
+script = ExtResource("4_m1kxf")
+
+[node name="VersionLabel" type="Label" parent="." unique_id=71775770]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "VERSION"
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("8_wb0q5")

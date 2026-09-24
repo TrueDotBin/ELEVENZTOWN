@@ -7,7 +7,7 @@ extends Button
 @export_category("Tweening")
 @export var tween_duration: float = 0.35
 @export var btn_hover_scale: float = 0.05
-@export var btn_hover_rotation: float = 2.0
+@export var btn_hover_rotation: float = 1.25
 @export var btn_press_scale: float = 0.035
 @export var trans_type: Tween.TransitionType = Tween.TRANS_QUINT
 

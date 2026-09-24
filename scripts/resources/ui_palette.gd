@@ -24,6 +24,15 @@ func _rebuild_theme() -> void:
 
     _theme_panel()
     _theme_buttons()
+    
+    _set_button_colors("SuccessButton", success)
+    _set_button_colors("DangerButton", danger)
+    _set_button_colors("WarningButton", warning)
+
+    target_theme.set_type_variation("SuccessButton", "Button")
+    target_theme.set_type_variation("DangerButton", "Button")
+    target_theme.set_type_variation("WarningButton", "Button")
+
     _set_text_colors()
 
     ResourceSaver.save(target_theme, target_theme.resource_path)
@@ -47,7 +56,7 @@ func _hover_button(base: StyleBoxFlat) -> StyleBoxFlat:
     var hover_button = base.duplicate()
     hover_button.set_border_width_all(3)
     
-    hover_button.bg_color = secondary_background.lightened(0.1)
+    hover_button.bg_color = base.bg_color.lightened(0.1)
 
     return hover_button
 
@@ -80,6 +89,24 @@ func _button_text_colors() -> void:
 func _set_text_colors() -> void:
     _button_text_colors()
     target_theme.set_color("font_color", "Label", foreground)
+
+func _set_button_colors(type_name: StringName, base_color: Color):
+    var normal_button = _button_box()
+    normal_button.bg_color = base_color
+    normal_button.border_color = base_color.lightened(0.25)
+    normal_button.shadow_color = base_color.darkened(0.25)
+
+    var hover_button = _hover_button(normal_button)
+    var pressed_button = _pressed_button(normal_button)
+    var focus_button = _focus_button(normal_button)
+
+    target_theme.set_stylebox("normal", type_name, normal_button)
+
+    target_theme.set_stylebox("hover", type_name, hover_button)
+    target_theme.set_stylebox("hover_pressed", type_name, hover_button)
+
+    target_theme.set_stylebox("pressed", type_name, pressed_button)
+    target_theme.set_stylebox("focus", type_name, focus_button)
 
 func _theme_buttons() -> void:
     var normal_button = _button_box()
