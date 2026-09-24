@@ -8,11 +8,16 @@
 [ext_resource type="Script" uid="uid://dkescnstkjc1s" path="res://scripts/ui/effects/button_effects.gd" id="4_m1kxf"]
 [ext_resource type="Script" uid="uid://ddejpkse8lx4" path="res://scripts/ui/background.gd" id="4_q85j6"]
 [ext_resource type="Texture2D" uid="uid://dj4xhtl4wkrxh" path="res://assets/sprites/menu/menu_elevenz.png" id="7_q85j6"]
+[ext_resource type="Script" uid="uid://b6aa6a0yfui1q" path="res://scripts/ui/menu_elevenz.gd" id="8_8g5eo"]
 [ext_resource type="Script" uid="uid://n4l0nxrdt7nv" path="res://scripts/ui/version_label.gd" id="8_wb0q5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8g5eo"]
 shader = ExtResource("2_btxxm")
 shader_parameter/brightness = -0.24999996437500005
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7suek"]
+shader = ExtResource("2_btxxm")
+shader_parameter/brightness = -0.09999995725
 
 [node name="MainMenu" type="Control" unique_id=1259175371]
 layout_mode = 3
@@ -57,6 +62,7 @@ rotation_speed = 1.5
 rotation_amplitude = 1.0
 
 [node name="ElevenZ" type="TextureRect" parent="." unique_id=1187874868]
+material = SubResource("ShaderMaterial_7suek")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.44500002
@@ -71,6 +77,8 @@ grow_vertical = 0
 pivot_offset_ratio = Vector2(0, 1)
 texture = ExtResource("7_q85j6")
 expand_mode = 2
+script = ExtResource("8_8g5eo")
+scale_speed = 1.2
 
 [node name="ButtonContainer" type="VBoxContainer" parent="." unique_id=1306392605]
 layout_mode = 1
