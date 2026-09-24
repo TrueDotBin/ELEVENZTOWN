@@ -1,5 +1,3 @@
-@tool
-
 extends TextureRect
 
 @export var rotation_speed: float = 3
