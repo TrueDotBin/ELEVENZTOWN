@@ -10,5 +10,7 @@ extends Control
 func _ready() -> void:
 	AudioManager.play_music(main_menu_song)
 
+	play_button.grab_focus()
+
 	if OS.has_feature("mobile") or OS.has_feature("web"):
 		leave_button.hide()
