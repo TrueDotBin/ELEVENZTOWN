@@ -27,6 +27,7 @@ AudioManager="*uid://byqo2wn5oen15"
 AudioLibrary="*uid://bdsdxp32rajh3"
 TweenManager="*uid://c7pmgvpsedlfa"
 SceneManager="*uid://di12ot72m1aiu"
+GameManager="*uid://disaesxx8o2vi"
 
 [display]
 
