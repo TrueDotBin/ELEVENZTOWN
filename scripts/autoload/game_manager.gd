@@ -26,3 +26,11 @@ func _quit() -> void:
 
 func show_options() -> void:
     OverlayManager.show_overlay("options")
+
+func start_game() -> void:
+    state = GameState.PLAYING
+    SceneManager.change_scene("res://scenes/game/game.tscn")
+
+func return_to_menu() -> void:
+    state = GameState.IN_MENU
+    SceneManager.change_scene("res://scenes/ui/main_menu.tscn")
