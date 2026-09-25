@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dvke8snmjms7c"]
+
+[ext_resource type="Script" uid="uid://dwda1xtkqw2qy" path="res://scripts/ui/setting_slider.gd" id="1_qymhi"]
+
+[node name="SettingSlider" type="Control" unique_id=1051443282]
+custom_minimum_size = Vector2(0, 23)
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.035
+offset_bottom = -22.68
+grow_horizontal = 2
+script = ExtResource("1_qymhi")
+
+[node name="Container" type="HBoxContainer" parent="." unique_id=1524348767]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 20.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Container" unique_id=746201952]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Setting Label"
+
+[node name="Slider" type="HSlider" parent="Container" unique_id=799908369]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05

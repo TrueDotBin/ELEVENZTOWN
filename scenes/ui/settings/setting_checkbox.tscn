@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://byxy46fmqbia2"]
+
+[ext_resource type="Script" uid="uid://byq1hil65rr07" path="res://scripts/ui/setting_checkbox.gd" id="1_bmvxy"]
+
+[node name="SettingCheckbox" type="Control" unique_id=1051443282]
+custom_minimum_size = Vector2(0, 43.8)
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.068
+offset_bottom = -44.064003
+grow_horizontal = 2
+script = ExtResource("1_bmvxy")
+
+[node name="CheckButton" type="CheckButton" parent="." unique_id=987224173]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 36.0
+grow_horizontal = 2
+text = "Setting Label"

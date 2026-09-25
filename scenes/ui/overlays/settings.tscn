@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cqb2wxge01xqe"]
 
 [ext_resource type="Script" uid="uid://ral814gi6ibp" path="res://scripts/ui/settings.gd" id="1_r46ri"]
+[ext_resource type="PackedScene" uid="uid://dvke8snmjms7c" path="res://scenes/ui/settings/setting_slider.tscn" id="2_4wpmc"]
 [ext_resource type="Script" uid="uid://dkescnstkjc1s" path="res://scripts/ui/effects/button_effects.gd" id="2_j7vsh"]
+[ext_resource type="PackedScene" uid="uid://byxy46fmqbia2" path="res://scenes/ui/settings/setting_checkbox.tscn" id="3_4wpmc"]
 
 [node name="Settings" type="CanvasLayer" unique_id=575126616]
 process_mode = 3
@@ -60,6 +62,58 @@ theme_override_constants/margin_right = 5
 [node name="Container" type="VBoxContainer" parent="UIRoot/MainPanel/ScrollContainer/MarginContainer" unique_id=802038618]
 layout_mode = 2
 theme_override_constants/separation = 7
+
+[node name="AudioSettings" type="FoldableContainer" parent="UIRoot/MainPanel/ScrollContainer/MarginContainer/Container" unique_id=370884496]
+layout_mode = 2
+title = "audio"
+
+[node name="AudioSettingsContainer" type="VBoxContainer" parent="UIRoot/MainPanel/ScrollContainer/MarginContainer/Container/AudioSettings" unique_id=898446766]
+layout_mode = 2
+
+[node name="MasterVolume" parent="UIRoot/MainPanel/ScrollContainer/MarginContainer/Container/AudioSettings/AudioSettingsContainer" unique_id=1051443282 instance=ExtResource("2_4wpmc")]
+layout_mode = 2
+tooltip_text = "overall sound volume"
+setting_label = "master volume"
+setting = "master_volume"
+
+[node name="MusicVolume" parent="UIRoot/MainPanel/ScrollContainer/MarginContainer/Container/AudioSettings/AudioSettingsContainer" unique_id=200732313 instance=ExtResource("2_4wpmc")]
+layout_mode = 2
+tooltip_text = "the volume of music"
+setting_label = "music volume"
+setting = "music_volume"
+
+[node name="SFXVolume" parent="UIRoot/MainPanel/ScrollContainer/MarginContainer/Container/AudioSettings/AudioSettingsContainer" unique_id=1744281750 instance=ExtResource("2_4wpmc")]
+layout_mode = 2
+tooltip_text = "the volume of sounds"
+setting_label = "sfx volume"
+setting = "sfx_volume"
+
+[node name="VideoSettings" type="FoldableContainer" parent="UIRoot/MainPanel/ScrollContainer/MarginContainer/Container" unique_id=325870921]
+layout_mode = 2
+title = "video"
+
+[node name="VideoSettingsContainer" type="VBoxContainer" parent="UIRoot/MainPanel/ScrollContainer/MarginContainer/Container/VideoSettings" unique_id=1983495177]
+layout_mode = 2
+
+[node name="UIScale" parent="UIRoot/MainPanel/ScrollContainer/MarginContainer/Container/VideoSettings/VideoSettingsContainer" unique_id=952257284 instance=ExtResource("2_4wpmc")]
+layout_mode = 2
+tooltip_text = "the size of UI elements"
+setting_label = "ui scale"
+setting = "ui_scale"
+min_value = 0.5
+max_value = 3.0
+
+[node name="Vsync" parent="UIRoot/MainPanel/ScrollContainer/MarginContainer/Container/VideoSettings/VideoSettingsContainer" unique_id=112873638 instance=ExtResource("3_4wpmc")]
+layout_mode = 2
+tooltip_text = "enables vertical sync (synchronizes the game's frame rate with your monitor's refresh rate) which may prevent screen tearing"
+setting_label = "vsync"
+setting = "vsync"
+
+[node name="Fullscreen" parent="UIRoot/MainPanel/ScrollContainer/MarginContainer/Container/VideoSettings/VideoSettingsContainer" unique_id=389164511 instance=ExtResource("3_4wpmc")]
+layout_mode = 2
+tooltip_text = "self explanatory :3"
+setting_label = "fullscreen"
+setting = "fullscreen"
 
 [node name="Title" type="Label" parent="UIRoot/MainPanel" unique_id=2047972051]
 layout_mode = 1

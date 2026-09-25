@@ -12,9 +12,15 @@ func _ready() -> void:
 
     OverlayManager.add_overlay("options", OverlayLibrary.SETTINGS)
 
+func _notification(what: int) -> void:
+    if what == NOTIFICATION_WM_CLOSE_REQUEST:
+        _quit()
+
 func quit_game() -> void:
     print("[ELEVENZTOWN] Quitting...")
+    _quit()
 
+func _quit() -> void:
     SettingsManager.save_settings()
     get_tree().quit()
 
