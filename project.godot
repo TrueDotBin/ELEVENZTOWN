@@ -31,6 +31,7 @@ AudioLibrary="*uid://bdsdxp32rajh3"
 TweenManager="*uid://c7pmgvpsedlfa"
 SceneManager="*uid://di12ot72m1aiu"
 GameManager="*uid://disaesxx8o2vi"
+OverlayLibrary="*uid://ct7di67mw61en"
 OverlayManager="*uid://1cnm0p5epy2l"
 
 [display]
