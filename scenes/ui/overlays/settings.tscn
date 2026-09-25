@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cqb2wxge01xqe"]
+
+[node name="Settings" type="CanvasLayer" unique_id=575126616]
+process_mode = 3
+
+[node name="UIRoot" type="Control" parent="." unique_id=1961007256]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="UIRoot" unique_id=1047297346]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="MainPanel" type="Panel" parent="UIRoot" unique_id=215062500]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20700002
+anchor_top = 0.19900002
+anchor_right = 0.79300004
+anchor_bottom = 0.80100006
+offset_left = 0.5359802
+offset_top = 0.04798889
+offset_right = -0.5360718
+offset_bottom = -0.048034668
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UIRoot/MainPanel" unique_id=323253146]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.133
+anchor_right = 1.0220001
+anchor_bottom = 0.90500003
+offset_top = 0.13000107
+offset_right = -14.828064
+offset_bottom = 0.049987793
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UIRoot/MainPanel/ScrollContainer" unique_id=1401325476]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="Container" type="VBoxContainer" parent="UIRoot/MainPanel/ScrollContainer/MarginContainer" unique_id=802038618]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Title" type="Label" parent="UIRoot/MainPanel" unique_id=2047972051]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 51.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
