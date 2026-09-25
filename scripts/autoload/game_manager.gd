@@ -10,8 +10,13 @@ var state: GameState = GameState.IN_MENU
 func _ready() -> void:
     print("WELCOME TO ELEVENZTOWN!")
 
+    OverlayManager.add_overlay("options", OverlayLibrary.SETTINGS)
+
 func quit_game() -> void:
     print("[ELEVENZTOWN] Quitting...")
 
     SettingsManager.save_settings()
     get_tree().quit()
+
+func show_options() -> void:
+    OverlayManager.show_overlay("options")

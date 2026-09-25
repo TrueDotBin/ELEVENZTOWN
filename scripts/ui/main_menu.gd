@@ -12,6 +12,7 @@ extends Control
 func _connect_button_signals() -> void:
 	leave_button.pressed.connect(GameManager.quit_game)
 	credits_button.pressed.connect(credits_panel.show)
+	options_button.pressed.connect(GameManager.show_options)
 
 func _ready() -> void:
 	AudioManager.play_music(main_menu_song)

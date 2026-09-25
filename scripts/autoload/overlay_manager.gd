@@ -29,8 +29,7 @@ func add_overlay_node(key: String, node: Node) -> void:
     else:
         add_child(node)
 
-    if node.has_signal("closed"):
-        node.closed.connect(func(): hide_overlay(key))
+    node.hide()
 
 func hide_overlay(key: String) -> void:
     if key not in _overlays:
