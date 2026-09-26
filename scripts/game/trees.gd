@@ -8,6 +8,9 @@ extends Node3D
 @export var min_size: float = 2.5
 @export var max_size: float = 7
 
+func _ready() -> void:
+	_create_trees()
+
 func _create_trees() -> void:
 	for child in get_children():
 		child.queue_free()
