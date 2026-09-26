@@ -1,3 +1,58 @@
 [gd_scene format=3 uid="uid://bgw5bicr6chj1"]
 
+[ext_resource type="Texture2D" uid="uid://c8g6pu8hhxyu7" path="res://assets/sprites/game/grass.png" id="1_7h61r"]
+[ext_resource type="Texture2D" uid="uid://s3m264aoqufl" path="res://assets/sprites/game/sky.png" id="2_0sr1o"]
+[ext_resource type="Script" uid="uid://c7fnvpolr7yog" path="res://scripts/game/player.gd" id="3_0sr1o"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_77xa6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kelw5"]
+albedo_texture = ExtResource("1_7h61r")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_77xa6"]
+size = Vector2(128, 128)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_y6oc2"]
+panorama = ExtResource("2_0sr1o")
+
+[sub_resource type="Sky" id="Sky_nurnf"]
+sky_material = SubResource("PanoramaSkyMaterial_y6oc2")
+
+[sub_resource type="Environment" id="Environment_77xa6"]
+background_mode = 2
+sky = SubResource("Sky_nurnf")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_77xa6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_77xa6"]
+
 [node name="Game" type="Node3D" unique_id=1496960987]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1232866934]
+
+[node name="Collider" type="CollisionShape3D" parent="Floor" unique_id=1195724121]
+shape = SubResource("WorldBoundaryShape3D_77xa6")
+debug_color = Color(0, 1, 0, 0.41960785)
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=1849294985]
+material_override = SubResource("StandardMaterial3D_kelw5")
+mesh = SubResource("PlaneMesh_77xa6")
+
+[node name="Environment" type="WorldEnvironment" parent="." unique_id=2092974217]
+environment = SubResource("Environment_77xa6")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=116262080 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+script = ExtResource("3_0sr1o")
+jump_velocity = 6.0
+camera = NodePath("Camera")
+
+[node name="Camera" type="Camera3D" parent="Player" unique_id=1214522228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, -0.35)
+fov = 90.0
+
+[node name="Mesh" type="MeshInstance3D" parent="Player" unique_id=620977371]
+mesh = SubResource("CapsuleMesh_77xa6")
+
+[node name="Collider" type="CollisionShape3D" parent="Player" unique_id=263275398]
+shape = SubResource("CapsuleShape3D_77xa6")
