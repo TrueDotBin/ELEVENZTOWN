@@ -3,6 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://c8g6pu8hhxyu7" path="res://assets/sprites/game/grass.png" id="1_7h61r"]
 [ext_resource type="Texture2D" uid="uid://s3m264aoqufl" path="res://assets/sprites/game/sky.png" id="2_0sr1o"]
 [ext_resource type="Script" uid="uid://c7fnvpolr7yog" path="res://scripts/game/player.gd" id="3_0sr1o"]
+[ext_resource type="Script" uid="uid://cmogffra04txe" path="res://scripts/game/trees.gd" id="4_kelw5"]
+[ext_resource type="PackedScene" uid="uid://deyo0uelyuxg5" path="res://assets/models/tree1.glb" id="5_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://dmsb1pnsj0dp1" path="res://assets/models/tree2.glb" id="6_87uf6"]
+[ext_resource type="PackedScene" uid="uid://b4w877r4rsln7" path="res://assets/models/tree3.glb" id="7_2a8rs"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_77xa6"]
 
@@ -56,3 +60,8 @@ mesh = SubResource("CapsuleMesh_77xa6")
 
 [node name="Collider" type="CollisionShape3D" parent="Player" unique_id=263275398]
 shape = SubResource("CapsuleShape3D_77xa6")
+
+[node name="Trees" type="Node3D" parent="." unique_id=1327645443]
+script = ExtResource("4_kelw5")
+area = Vector2(120, 120)
+trees = Array[PackedScene]([ExtResource("5_bdhmt"), ExtResource("6_87uf6"), ExtResource("7_2a8rs")])
