@@ -172,11 +172,15 @@ OpenGameArt.org
 [b]Sound Effects[/b]
 true.bin
 
+[b]3D Models[/b]
+Classic Roblox - Happy Home in Robloxia by JackNet on Thingiverse: https://www.thingiverse.com/thing:1685487
+
 [b]Tools[/b]
 - Godot Engine (Game Engine)
 - FL Studio (Sound Effects)
 - Paint.NET (Art)
 - remove.bg (Background Removal)
+- Blender (Modeling/Converting models to GLB format)
 
 [font_size=24]Thank you for playing![/font_size]"
 horizontal_alignment = 1
