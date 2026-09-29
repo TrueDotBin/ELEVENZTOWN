@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://deyo0uelyuxg5" path="res://assets/models/tree1.glb" id="5_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://dmsb1pnsj0dp1" path="res://assets/models/tree2.glb" id="6_87uf6"]
 [ext_resource type="PackedScene" uid="uid://b4w877r4rsln7" path="res://assets/models/tree3.glb" id="7_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://qoxmh2dbryhq" path="res://assets/models/phone.glb" id="8_87uf6"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_77xa6"]
 
@@ -66,3 +67,30 @@ shape = SubResource("CapsuleShape3D_77xa6")
 script = ExtResource("4_kelw5")
 area = Vector2(120, 120)
 trees = Array[PackedScene]([ExtResource("5_bdhmt"), ExtResource("6_87uf6"), ExtResource("7_2a8rs")])
+
+[node name="Phone" parent="." unique_id=1783339019 groups=["usable"] instance=ExtResource("8_87uf6")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -7, 0.075, 0)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=269544427]
+
+[node name="UIRoot" type="Control" parent="HUD" unique_id=419865650]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="ColorRect" parent="HUD/UIRoot" unique_id=577382007]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2

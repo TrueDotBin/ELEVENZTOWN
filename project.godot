@@ -39,6 +39,10 @@ OverlayManager="*uid://1cnm0p5epy2l"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+usable=""
+
 [gui]
 
 theme/custom="uid://bq276l1ov3bdu"
