@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dmsb1pnsj0dp1" path="res://assets/models/tree2.glb" id="6_87uf6"]
 [ext_resource type="PackedScene" uid="uid://b4w877r4rsln7" path="res://assets/models/tree3.glb" id="7_2a8rs"]
 [ext_resource type="PackedScene" uid="uid://qoxmh2dbryhq" path="res://assets/models/phone.glb" id="8_87uf6"]
+[ext_resource type="Script" uid="uid://dsfvbbx7hcr7w" path="res://scripts/game/phone.gd" id="9_2a8rs"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_77xa6"]
 
@@ -31,6 +32,9 @@ sky = SubResource("Sky_nurnf")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_77xa6"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_y6oc2"]
+size = Vector3(3.4837646, 0.22711182, 1.6503906)
+
 [node name="Game" type="Node3D" unique_id=1496960987]
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1232866934]
@@ -52,6 +56,7 @@ script = ExtResource("3_0sr1o")
 jump_velocity = 6.0
 camera = NodePath("Camera")
 sensitivity = 0.003
+interact_range = 5.0
 
 [node name="Camera" type="Camera3D" parent="Player" unique_id=1214522228]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, -0.35)
@@ -67,9 +72,6 @@ shape = SubResource("CapsuleShape3D_77xa6")
 script = ExtResource("4_kelw5")
 area = Vector2(120, 120)
 trees = Array[PackedScene]([ExtResource("5_bdhmt"), ExtResource("6_87uf6"), ExtResource("7_2a8rs")])
-
-[node name="Phone" parent="." unique_id=1783339019 groups=["usable"] instance=ExtResource("8_87uf6")]
-transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -7, 0.075, 0)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=269544427]
 
@@ -94,3 +96,11 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Phone" parent="." unique_id=1783339019 groups=["usable"] instance=ExtResource("8_87uf6")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -7, 0.075, 0)
+script = ExtResource("9_2a8rs")
+
+[node name="Collider" type="CollisionShape3D" parent="Phone" unique_id=901817946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049621582, -0.009185791, 0.016601544)
+shape = SubResource("BoxShape3D_y6oc2")

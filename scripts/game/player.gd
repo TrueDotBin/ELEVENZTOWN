@@ -8,6 +8,9 @@ extends CharacterBody3D
 @export var camera: Camera3D
 @export var sensitivity: float = 0.005
 
+@export_category("Interact")
+@export var interact_range: float = 2.5
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -16,6 +19,23 @@ func _input(event: InputEvent) -> void:
 		rotate_y(-event.relative.x * sensitivity)
 		camera.rotate_x(-event.relative.y * sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, -PI / 2, PI / 2)
+		
+func _ray() -> void:
+	var space_state = get_world_3d().direct_space_state
+
+	var from = camera.global_position
+	var to = from + (-camera.global_transform.basis.z) * interact_range
+	var query = PhysicsRayQueryParameters3D.create(from, to)
+	var result = space_state.intersect_ray(query)
+
+	if result.is_empty():
+		return
+
+	var aimed = result.collider
+
+	if aimed.is_in_group("usable"):
+		if Input.is_action_just_pressed("use") and aimed.has_method("use"):
+			aimed.use()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -29,5 +49,7 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
+
+	_ray()
 
 	move_and_slide()
