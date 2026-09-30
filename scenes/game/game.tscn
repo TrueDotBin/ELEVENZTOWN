@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://deyo0uelyuxg5" path="res://assets/models/tree1.glb" id="5_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://dmsb1pnsj0dp1" path="res://assets/models/tree2.glb" id="6_87uf6"]
 [ext_resource type="PackedScene" uid="uid://b4w877r4rsln7" path="res://assets/models/tree3.glb" id="7_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://0d8kjskywq7" path="res://scenes/ui/overlays/phone.tscn" id="8_4j704"]
 [ext_resource type="PackedScene" uid="uid://qoxmh2dbryhq" path="res://assets/models/phone.glb" id="8_87uf6"]
 [ext_resource type="Script" uid="uid://dsfvbbx7hcr7w" path="res://scripts/game/phone.gd" id="9_2a8rs"]
 
@@ -98,9 +99,13 @@ offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Phone" parent="." unique_id=1783339019 groups=["usable"] instance=ExtResource("8_87uf6")]
+[node name="PhoneUI" parent="HUD" unique_id=80952348 instance=ExtResource("8_4j704")]
+visible = false
+
+[node name="Phone" parent="." unique_id=1783339019 node_paths=PackedStringArray("phone_ui") groups=["usable"] instance=ExtResource("8_87uf6")]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -7, 0.075, 0)
 script = ExtResource("9_2a8rs")
+phone_ui = NodePath("../HUD/PhoneUI")
 
 [node name="Collider" type="CollisionShape3D" parent="Phone" unique_id=901817946]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049621582, -0.009185791, 0.016601544)
