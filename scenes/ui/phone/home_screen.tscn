@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dduqnkx1qaw0j"]
+
+[ext_resource type="Texture2D" uid="uid://ceshgns52tk82" path="res://assets/sprites/phone/wallpaper.png" id="2_whu0q"]
+[ext_resource type="Theme" uid="uid://3ks6bln5r403" path="res://resources/elevenzOS.tres" id="3_68vkk"]
+[ext_resource type="Script" uid="uid://yyvitbmr2vbj" path="res://scripts/ui/controls/time_label.gd" id="4_jkpwm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77xa6"]
+bg_color = Color(0.1254902, 0.1254902, 0.1254902, 0.7058824)
+
+[node name="HomeScreen" type="Control" unique_id=1849147849]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wallpaper" type="TextureRect" parent="." unique_id=1717747197]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_whu0q")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StatusBar" type="Panel" parent="." unique_id=1966820376]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.062000003
+offset_bottom = -20.176003
+grow_horizontal = 2
+theme = ExtResource("3_68vkk")
+theme_override_styles/panel = SubResource("StyleBoxFlat_77xa6")
+
+[node name="Time" type="Label" parent="StatusBar" unique_id=1792695520]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47400004
+anchor_right = 0.526
+anchor_bottom = 1.0
+offset_left = -0.54803467
+offset_right = 0.54797363
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_68vkk")
+theme_override_font_sizes/font_size = 12
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_jkpwm")

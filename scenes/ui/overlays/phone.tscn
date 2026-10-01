@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://be63ef3abcu5a" path="res://assets/sprites/game/phone.png" id="1_fj4ch"]
 [ext_resource type="Script" uid="uid://dpqf8wyiwlmrg" path="res://scripts/ui/phone/phone.gd" id="2_ouhyf"]
 [ext_resource type="PackedScene" uid="uid://dtryopnlb076i" path="res://scenes/ui/phone/lock_screen.tscn" id="2_wwd6k"]
+[ext_resource type="PackedScene" uid="uid://dduqnkx1qaw0j" path="res://scenes/ui/phone/home_screen.tscn" id="3_gdpp7"]
 
 [node name="UIRoot" type="Control" unique_id=80952348]
 clip_contents = true
@@ -35,6 +36,7 @@ texture = ExtResource("1_fj4ch")
 script = ExtResource("2_ouhyf")
 start_screen_name = "lock_screen"
 screens = {
+"home_screen": NodePath("PhoneUIRoot/HomeScreen"),
 "lock_screen": NodePath("PhoneUIRoot/LockScreen")
 }
 
@@ -61,9 +63,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="LockScreen" parent="Phone/PhoneUIRoot" unique_id=1849147849 instance=ExtResource("2_wwd6k")]
+[node name="HomeScreen" parent="Phone/PhoneUIRoot" unique_id=1849147849 instance=ExtResource("3_gdpp7")]
+layout_mode = 1
+
+[node name="LockScreen" parent="Phone/PhoneUIRoot" unique_id=1853156115 instance=ExtResource("2_wwd6k")]
 clip_contents = true
 layout_mode = 1
+unlock_screen_name = "home_screen"
 
 [node name="HomeButton" type="Button" parent="Phone" unique_id=1501149043]
 layout_mode = 1

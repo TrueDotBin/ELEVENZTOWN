@@ -11,14 +11,14 @@ func _hide_all_screens():
 	for screen in screens.values():
 		screen.hide()
 
-func show_screen(screen_name: String) -> void:
+func show_screen(screen_name: String, hide_previous: bool = true) -> void:
 	var screen = screens.get(screen_name)
 
 	if not screen:
 		push_error("[Phone] Cannot show screen %s because it doesn't exist" % screen_name)
 		return
 
-	if _current_screen:
+	if _current_screen and hide_previous:
 		_current_screen.hide()
 
 	_current_screen = screen
