@@ -11,7 +11,7 @@ func _hide_all_screens():
 	for screen in screens.values():
 		screen.hide()
 
-func _show_screen(screen_name: String) -> void:
+func show_screen(screen_name: String) -> void:
 	var screen = screens.get(screen_name)
 
 	if not screen:
@@ -26,7 +26,7 @@ func _show_screen(screen_name: String) -> void:
 
 func _ready() -> void:
 	_hide_all_screens()
-	_show_screen(start_screen_name)
+	show_screen(start_screen_name)
 
 func _on_home_button_pressed() -> void:
 	if _current_screen and _current_screen.has_method("on_home_pressed"):

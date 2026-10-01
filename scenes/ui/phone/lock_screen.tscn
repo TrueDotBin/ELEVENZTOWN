@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dtryopnlb076i"]
 
 [ext_resource type="Texture2D" uid="uid://ceshgns52tk82" path="res://assets/sprites/phone/wallpaper.png" id="1_7tga1"]
+[ext_resource type="Script" uid="uid://ch701rl0xy5jp" path="res://scripts/ui/phone/lock_screen.gd" id="1_c03rk"]
 [ext_resource type="Script" uid="uid://yyvitbmr2vbj" path="res://scripts/ui/controls/time_label.gd" id="1_x7vjh"]
 [ext_resource type="Theme" uid="uid://3ks6bln5r403" path="res://resources/elevenzOS.tres" id="2_ptw4f"]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_c03rk")
 
 [node name="Wallpaper" type="TextureRect" parent="." unique_id=1717747197]
 layout_mode = 1
