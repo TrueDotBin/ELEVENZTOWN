@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dtryopnlb076i"]
+
+[ext_resource type="Texture2D" uid="uid://ceshgns52tk82" path="res://assets/sprites/phone/wallpaper.png" id="1_7tga1"]
+[ext_resource type="Script" uid="uid://yyvitbmr2vbj" path="res://scripts/ui/time_label.gd" id="1_x7vjh"]
+[ext_resource type="Theme" uid="uid://3ks6bln5r403" path="res://resources/elevenzOS.tres" id="2_ptw4f"]
+
+[node name="LockScreen" type="Control" unique_id=1849147849]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wallpaper" type="TextureRect" parent="." unique_id=1717747197]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_7tga1")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Time" type="Label" parent="." unique_id=1792695520]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.062000003
+anchor_right = 0.5
+anchor_bottom = 0.062000003
+offset_left = -68.5
+offset_top = -0.1760025
+offset_right = 68.5
+offset_bottom = 58.823997
+grow_horizontal = 2
+theme = ExtResource("2_ptw4f")
+theme_override_font_sizes/font_size = 56
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_x7vjh")
+
+[node name="HowToUnlock" type="Label" parent="." unique_id=696965275]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.99200004
+anchor_right = 0.5
+anchor_bottom = 0.99200004
+offset_left = -84.5
+offset_top = -20.81604
+offset_right = 84.5
+offset_bottom = 0.18395996
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_ptw4f")
+text = "Press Home to unlock"
+horizontal_alignment = 1

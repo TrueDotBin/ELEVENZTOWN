@@ -5,10 +5,10 @@
 
 [resource]
 script = ExtResource("1_fijis")
-primary_background = Color(0.18243027, 0.31530663, 0.9450279, 1)
-secondary_background = Color(6.8345666e-06, 0.3350622, 0.71906585, 1)
+primary_background = Color(0.2894726, 0.44634563, 0.9796564, 1)
+secondary_background = Color(2.6953221e-05, 0.42148468, 0.8930248, 1)
 foreground = Color(0.86203355, 0.8943492, 0.8943215, 1)
-accent = Color(4.0044786e-05, 0.42959645, 0.88827896, 1)
+accent = Color(0.15485242, 0.527092, 0.9999768, 1)
 danger = Color(0.7411765, 0.09803922, 0, 1)
 warning = Color(1, 0.6117647, 0.1882353, 1)
 success = Color(0.2901961, 0.75686276, 0.1764706, 1)
