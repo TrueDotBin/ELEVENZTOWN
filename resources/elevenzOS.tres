@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://3ks6bln5r403"]
 
-[ext_resource type="FontFile" uid="uid://bt5lwoy0s75rw" path="res://assets/fonts/dm_sans.ttf" id="1_yy2qs"]
+[ext_resource type="FontFile" uid="uid://dqqi4jduobewq" path="res://assets/fonts/inter.ttf" id="1_yy2qs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yy2qs"]
 content_margin_left = 10.0
@@ -222,15 +222,8 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_color = Color(0.75, 0.45882356, 0.14117648, 1)
 
-[sub_resource type="FontVariation" id="FontVariation_vbgoy"]
-base_font = ExtResource("1_yy2qs")
-variation_opentype = {
-1869640570: 9,
-2003265652: 600
-}
-
 [resource]
-default_font = SubResource("FontVariation_vbgoy")
+default_font = ExtResource("1_yy2qs")
 Button/colors/font_color = Color(0.86203355, 0.8943492, 0.8943215, 1)
 Button/colors/font_disabled_color = Color(0.43101677, 0.4471746, 0.44716075, 1)
 Button/colors/font_focus_color = Color(0.86203355, 0.8943492, 0.8943215, 1)
