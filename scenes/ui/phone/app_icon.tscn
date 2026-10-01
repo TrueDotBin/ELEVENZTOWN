@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://boludv2qur376"]
+
+[ext_resource type="Theme" uid="uid://3ks6bln5r403" path="res://resources/elevenzOS.tres" id="1_7wvro"]
+[ext_resource type="Texture2D" uid="uid://bu5xleqrx5ucv" path="res://assets/sprites/phone/placeholder.png" id="2_foy2d"]
+[ext_resource type="Shader" uid="uid://dwx7nd13hu2yh" path="res://shaders/round_corners.gdshader" id="2_m3y5l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3seik"]
+shader = ExtResource("2_m3y5l")
+shader_parameter/corner_radius = 0.250000011875
+
+[node name="AppIcon" type="Control" unique_id=1259274469]
+clip_contents = true
+layout_mode = 3
+anchor_right = 0.056
+anchor_bottom = 0.119
+offset_right = -0.51200104
+offset_bottom = -0.11199951
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AppNameLabel" type="Label" parent="." unique_id=69313229]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -15.0
+offset_right = 32.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_7wvro")
+theme_override_font_sizes/font_size = 9
+text = "App Name"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="AppIcon" type="TextureRect" parent="." unique_id=598913134]
+material = SubResource("ShaderMaterial_3seik")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.0
+offset_top = 5.0
+offset_right = 27.0
+offset_bottom = 59.0
+grow_horizontal = 2
+texture = ExtResource("2_foy2d")
