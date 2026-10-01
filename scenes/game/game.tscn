@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b4w877r4rsln7" path="res://assets/models/tree3.glb" id="7_2a8rs"]
 [ext_resource type="PackedScene" uid="uid://0d8kjskywq7" path="res://scenes/ui/overlays/phone.tscn" id="8_4j704"]
 [ext_resource type="PackedScene" uid="uid://qoxmh2dbryhq" path="res://assets/models/phone.glb" id="8_87uf6"]
-[ext_resource type="Script" uid="uid://dsfvbbx7hcr7w" path="res://scripts/game/phone.gd" id="9_2a8rs"]
+[ext_resource type="Script" uid="uid://dsfvbbx7hcr7w" path="res://scripts/game/items/phone.gd" id="9_2a8rs"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_77xa6"]
 

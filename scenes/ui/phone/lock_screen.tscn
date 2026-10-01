@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dtryopnlb076i"]
 
 [ext_resource type="Texture2D" uid="uid://ceshgns52tk82" path="res://assets/sprites/phone/wallpaper.png" id="1_7tga1"]
-[ext_resource type="Script" uid="uid://yyvitbmr2vbj" path="res://scripts/ui/time_label.gd" id="1_x7vjh"]
+[ext_resource type="Script" uid="uid://yyvitbmr2vbj" path="res://scripts/ui/controls/time_label.gd" id="1_x7vjh"]
 [ext_resource type="Theme" uid="uid://3ks6bln5r403" path="res://resources/elevenzOS.tres" id="2_ptw4f"]
 
 [node name="LockScreen" type="Control" unique_id=1849147849]

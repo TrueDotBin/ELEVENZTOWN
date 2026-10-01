@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvke8snmjms7c"]
 
-[ext_resource type="Script" uid="uid://dwda1xtkqw2qy" path="res://scripts/ui/setting_slider.gd" id="1_qymhi"]
+[ext_resource type="Script" uid="uid://dwda1xtkqw2qy" path="res://scripts/ui/controls/setting_slider.gd" id="1_qymhi"]
 
 [node name="SettingSlider" type="Control" unique_id=1051443282]
 custom_minimum_size = Vector2(0, 23)

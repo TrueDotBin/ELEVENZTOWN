@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://byxy46fmqbia2"]
 
-[ext_resource type="Script" uid="uid://byq1hil65rr07" path="res://scripts/ui/setting_checkbox.gd" id="1_bmvxy"]
+[ext_resource type="Script" uid="uid://byq1hil65rr07" path="res://scripts/ui/controls/setting_checkbox.gd" id="1_bmvxy"]
 
 [node name="SettingCheckbox" type="Control" unique_id=1051443282]
 custom_minimum_size = Vector2(0, 43.8)

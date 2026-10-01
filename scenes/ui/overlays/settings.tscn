@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqb2wxge01xqe"]
 
-[ext_resource type="Script" uid="uid://ral814gi6ibp" path="res://scripts/ui/settings.gd" id="1_r46ri"]
+[ext_resource type="Script" uid="uid://ral814gi6ibp" path="res://scripts/ui/overlays/settings.gd" id="1_r46ri"]
 [ext_resource type="PackedScene" uid="uid://dvke8snmjms7c" path="res://scenes/ui/settings/setting_slider.tscn" id="2_4wpmc"]
 [ext_resource type="Script" uid="uid://dkescnstkjc1s" path="res://scripts/ui/effects/button_effects.gd" id="2_j7vsh"]
 [ext_resource type="PackedScene" uid="uid://byxy46fmqbia2" path="res://scenes/ui/settings/setting_checkbox.tscn" id="3_4wpmc"]
