@@ -15,6 +15,13 @@ extends Resource
 @export_category("Themes")
 @export var target_theme: Theme
 
+@export_category("Styles")
+@export var border: bool = true
+@export var shadow: bool = true
+
+@export_category("Control Exclusions")
+@export var exclude_panel: bool = false
+
 @export_tool_button("Rebuild Theme") var rebuild_action = _rebuild_theme
 
 func _rebuild_theme() -> void:
@@ -22,7 +29,9 @@ func _rebuild_theme() -> void:
         push_warning("Please attach a theme in the inspector!")
         return
 
-    _theme_panel()
+    if not exclude_panel:
+        _theme_panel()
+
     _theme_buttons()
     
     _set_button_colors("SuccessButton", success)
@@ -39,22 +48,28 @@ func _rebuild_theme() -> void:
 
 func _button_box() -> StyleBoxFlat:
     var stylebox = StyleBoxFlat.new()
-    stylebox.set_border_width_all(2)
+
+    if border:
+        stylebox.set_border_width_all(2)
+
     stylebox.set_corner_radius_all(16)
     stylebox.set_content_margin_all(10)
 
     stylebox.border_color = accent
     stylebox.bg_color = secondary_background
 
-    stylebox.shadow_offset = Vector2(0, 2)
-    stylebox.shadow_size = 1
-    stylebox.shadow_color = primary_background
+    if shadow:
+        stylebox.shadow_offset = Vector2(0, 2)
+        stylebox.shadow_size = 1
+        stylebox.shadow_color = primary_background
 
     return stylebox
 
 func _hover_button(base: StyleBoxFlat) -> StyleBoxFlat:
     var hover_button = base.duplicate()
-    hover_button.set_border_width_all(3)
+
+    if border:
+        hover_button.set_border_width_all(3)
     
     hover_button.bg_color = base.bg_color.lightened(0.1)
 
@@ -62,9 +77,12 @@ func _hover_button(base: StyleBoxFlat) -> StyleBoxFlat:
 
 func _pressed_button(base: StyleBoxFlat) -> StyleBoxFlat:
     var pressed_button = base.duplicate()
-    pressed_button.set_border_width_all(1)
 
-    pressed_button.shadow_offset = Vector2(0, 1)
+    if border:
+        pressed_button.set_border_width_all(1)
+
+    if shadow:
+        pressed_button.shadow_offset = Vector2(0, 1)
 
     return pressed_button
 
@@ -125,7 +143,9 @@ func _theme_buttons() -> void:
 func _theme_panel() -> void:
     var panel_box = StyleBoxFlat.new()
 
-    panel_box.set_border_width_all(2)
+    if border:
+        panel_box.set_border_width_all(2)
+
     panel_box.set_corner_radius_all(16)
     panel_box.set_content_margin_all(10)
 

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UIPalette" format=3 uid="uid://b2c4q73x7or3"]
+
+[ext_resource type="Script" uid="uid://tw3j60087u82" path="res://scripts/resources/ui_palette.gd" id="1_fijis"]
+[ext_resource type="Theme" uid="uid://3ks6bln5r403" path="res://resources/elevenzOS.tres" id="2_fijis"]
+
+[resource]
+script = ExtResource("1_fijis")
+primary_background = Color(0.18243027, 0.31530663, 0.9450279, 1)
+secondary_background = Color(6.8345666e-06, 0.3350622, 0.71906585, 1)
+foreground = Color(0.86203355, 0.8943492, 0.8943215, 1)
+accent = Color(4.0044786e-05, 0.42959645, 0.88827896, 1)
+danger = Color(0.7411765, 0.09803922, 0, 1)
+warning = Color(1, 0.6117647, 0.1882353, 1)
+success = Color(0.2901961, 0.75686276, 0.1764706, 1)
+target_theme = ExtResource("2_fijis")
+border = false
+shadow = null
+exclude_panel = true
+metadata/_custom_type_script = "uid://tw3j60087u82"
