@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://ceshgns52tk82" path="res://assets/sprites/phone/wallpaper.png" id="2_whu0q"]
 [ext_resource type="Theme" uid="uid://3ks6bln5r403" path="res://resources/elevenzOS.tres" id="3_68vkk"]
 [ext_resource type="Script" uid="uid://yyvitbmr2vbj" path="res://scripts/ui/controls/time_label.gd" id="4_jkpwm"]
+[ext_resource type="PackedScene" uid="uid://boludv2qur376" path="res://scenes/ui/phone/app_icon.tscn" id="4_whu0q"]
+[ext_resource type="Texture2D" uid="uid://bl6s4ojg6mc64" path="res://assets/sprites/phone/appicons/calc.png" id="5_68vkk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77xa6"]
 bg_color = Color(0.1254902, 0.1254902, 0.1254902, 0.7058824)
@@ -78,3 +80,8 @@ size_flags_vertical = 3
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 16
 columns = 4
+
+[node name="Calculator" parent="VBoxContainer/MarginContainer/AppGrid" unique_id=1259274469 instance=ExtResource("4_whu0q")]
+layout_mode = 2
+app_name = "Calculator"
+app_icon = ExtResource("5_68vkk")

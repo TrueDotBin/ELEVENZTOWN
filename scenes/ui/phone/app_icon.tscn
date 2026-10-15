@@ -51,6 +51,7 @@ offset_right = 24.0
 offset_bottom = 48.0
 grow_horizontal = 2
 texture = ExtResource("2_foy2d")
+expand_mode = 2
 
 [node name="ClickHandler" type="Button" parent="." unique_id=1702964980]
 layout_mode = 1
