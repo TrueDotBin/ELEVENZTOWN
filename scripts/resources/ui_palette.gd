@@ -11,6 +11,7 @@ extends Resource
 @export var danger: Color
 @export var warning: Color
 @export var success: Color
+@export var gray: Color
 
 @export_category("Themes")
 @export var target_theme: Theme
@@ -37,10 +38,12 @@ func _rebuild_theme() -> void:
     _set_button_colors("SuccessButton", success)
     _set_button_colors("DangerButton", danger)
     _set_button_colors("WarningButton", warning)
+    _set_button_colors("GrayButton", gray)
 
     target_theme.set_type_variation("SuccessButton", "Button")
     target_theme.set_type_variation("DangerButton", "Button")
     target_theme.set_type_variation("WarningButton", "Button")
+    target_theme.set_type_variation("GrayButton", "Button")
 
     _set_text_colors()
 

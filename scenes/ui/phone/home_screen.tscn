@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dduqnkx1qaw0j"]
 
+[ext_resource type="Script" uid="uid://dy83behxdv0oc" path="res://scripts/ui/phone/home_screen.gd" id="1_68vkk"]
 [ext_resource type="Texture2D" uid="uid://ceshgns52tk82" path="res://assets/sprites/phone/wallpaper.png" id="2_whu0q"]
 [ext_resource type="Theme" uid="uid://3ks6bln5r403" path="res://resources/elevenzOS.tres" id="3_68vkk"]
 [ext_resource type="Script" uid="uid://yyvitbmr2vbj" path="res://scripts/ui/controls/time_label.gd" id="4_jkpwm"]
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_68vkk")
 
 [node name="Wallpaper" type="TextureRect" parent="." unique_id=1717747197]
 layout_mode = 1
@@ -81,7 +83,9 @@ theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 16
 columns = 4
 
-[node name="Calculator" parent="VBoxContainer/MarginContainer/AppGrid" unique_id=1259274469 instance=ExtResource("4_whu0q")]
+[node name="Calculator" parent="VBoxContainer/MarginContainer/AppGrid" unique_id=1259274469 node_paths=PackedStringArray("home_screen") instance=ExtResource("4_whu0q")]
 layout_mode = 2
 app_name = "Calculator"
 app_icon = ExtResource("5_68vkk")
+app_screen = "calculator"
+home_screen = NodePath("../../../..")

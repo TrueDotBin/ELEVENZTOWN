@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://be63ef3abcu5a" path="res://assets/sprites/game/phone.png" id="1_fj4ch"]
 [ext_resource type="Script" uid="uid://dpqf8wyiwlmrg" path="res://scripts/ui/phone/phone.gd" id="2_ouhyf"]
 [ext_resource type="PackedScene" uid="uid://dtryopnlb076i" path="res://scenes/ui/phone/lock_screen.tscn" id="2_wwd6k"]
+[ext_resource type="PackedScene" uid="uid://c45qqlfpixp0l" path="res://scenes/ui/phone/calc.tscn" id="3_db3ia"]
 [ext_resource type="PackedScene" uid="uid://dduqnkx1qaw0j" path="res://scenes/ui/phone/home_screen.tscn" id="3_gdpp7"]
 
 [node name="UIRoot" type="Control" unique_id=80952348]
@@ -25,6 +26,8 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.5019608)
 
 [node name="Phone" type="TextureRect" parent="." unique_id=1175172934 node_paths=PackedStringArray("screens")]
+custom_minimum_size = Vector2(1152, 648)
+custom_maximum_size = Vector2(1152, 648)
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -33,11 +36,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_fj4ch")
+expand_mode = 1
 script = ExtResource("2_ouhyf")
 start_screen_name = "lock_screen"
+home_screen_name = "home_screen"
 screens = {
-"home_screen": NodePath("PhoneUIRoot/HomeScreen"),
-"lock_screen": NodePath("PhoneUIRoot/LockScreen")
+"calculator": NodePath("PhoneUIRoot/VpContainer/Viewport/Calculator"),
+"home_screen": NodePath("PhoneUIRoot/VpContainer/Viewport/HomeScreen"),
+"lock_screen": NodePath("PhoneUIRoot/VpContainer/Viewport/LockScreen")
 }
 
 [node name="PhoneUIRoot" type="Control" parent="Phone" unique_id=833675754]
@@ -54,21 +60,44 @@ offset_bottom = 0.031982422
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="Phone/PhoneUIRoot" unique_id=921828956]
+[node name="VpContainer" type="SubViewportContainer" parent="Phone/PhoneUIRoot" unique_id=1456165184]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Viewport" type="SubViewport" parent="Phone/PhoneUIRoot/VpContainer" unique_id=253944867]
+handle_input_locally = false
+size = Vector2i(648, 1152)
+size_2d_override = Vector2i(304, 540)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Background" type="ColorRect" parent="Phone/PhoneUIRoot/VpContainer/Viewport" unique_id=921828956]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.38, 0.38)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 color = Color(0, 0, 0, 1)
 
-[node name="HomeScreen" parent="Phone/PhoneUIRoot" unique_id=1849147849 instance=ExtResource("3_gdpp7")]
-layout_mode = 1
+[node name="Calculator" parent="Phone/PhoneUIRoot/VpContainer/Viewport" unique_id=1849147849 instance=ExtResource("3_db3ia")]
+visible = false
+scale = Vector2(0.38, 0.38)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
-[node name="LockScreen" parent="Phone/PhoneUIRoot" unique_id=1853156115 instance=ExtResource("2_wwd6k")]
+[node name="HomeScreen" parent="Phone/PhoneUIRoot/VpContainer/Viewport" unique_id=1701983774 instance=ExtResource("3_gdpp7")]
+scale = Vector2(0.38, 0.38)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="LockScreen" parent="Phone/PhoneUIRoot/VpContainer/Viewport" unique_id=1853156115 instance=ExtResource("2_wwd6k")]
 clip_contents = true
-layout_mode = 1
+scale = Vector2(0.38, 0.38)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 unlock_screen_name = "home_screen"
 
 [node name="HomeButton" type="Button" parent="Phone" unique_id=1501149043]

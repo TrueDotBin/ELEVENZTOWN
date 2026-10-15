@@ -3,9 +3,11 @@ class_name Phone
 
 @export_category("Screens")
 @export var start_screen_name: String
+@export var home_screen_name: String
 @export var screens: Dictionary[String, Control] = {}
 
 var _current_screen: Control
+var _can_exit: bool
 
 func _hide_all_screens():
 	for screen in screens.values():
@@ -21,7 +23,13 @@ func show_screen(screen_name: String, hide_previous: bool = true) -> void:
 	if _current_screen and hide_previous:
 		_current_screen.hide()
 
+	if screen is HomeScreen:
+		if not screen.app_requested.is_connected(show_screen):
+			screen.app_requested.connect(show_screen)
+
 	_current_screen = screen
+	_can_exit = true
+
 	screen.show()
 
 func _ready() -> void:
@@ -31,3 +39,5 @@ func _ready() -> void:
 func _on_home_button_pressed() -> void:
 	if _current_screen and _current_screen.has_method("on_home_pressed"):
 		_current_screen.on_home_pressed(self)
+	elif _can_exit:
+		show_screen(home_screen_name, true)
