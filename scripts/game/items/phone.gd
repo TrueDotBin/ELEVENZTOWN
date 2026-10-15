@@ -13,3 +13,6 @@ func use() -> void:
 func stop_using() -> void:
 	phone_ui.hide()
 	stopped.emit()
+
+func _on_close_button_pressed() -> void:
+	stop_using()
