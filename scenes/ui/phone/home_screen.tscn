@@ -4,11 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://ceshgns52tk82" path="res://assets/sprites/phone/wallpaper.png" id="2_whu0q"]
 [ext_resource type="Theme" uid="uid://3ks6bln5r403" path="res://resources/elevenzOS.tres" id="3_68vkk"]
 [ext_resource type="Script" uid="uid://yyvitbmr2vbj" path="res://scripts/ui/controls/time_label.gd" id="4_jkpwm"]
+[ext_resource type="FontFile" uid="uid://dqqi4jduobewq" path="res://assets/fonts/inter.ttf" id="4_r61pw"]
 [ext_resource type="PackedScene" uid="uid://boludv2qur376" path="res://scenes/ui/phone/app_icon.tscn" id="4_whu0q"]
 [ext_resource type="Texture2D" uid="uid://bl6s4ojg6mc64" path="res://assets/sprites/phone/appicons/calc.png" id="5_68vkk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77xa6"]
 bg_color = Color(0.1254902, 0.1254902, 0.1254902, 0.7058824)
+
+[sub_resource type="FontVariation" id="FontVariation_yy2qs"]
+base_font = ExtResource("4_r61pw")
+opentype_features = {
+1953396077: 1
+}
 
 [node name="HomeScreen" type="Control" unique_id=1849147849]
 layout_mode = 3
@@ -52,6 +59,7 @@ offset_right = 0.54797363
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_68vkk")
+theme_override_fonts/font = SubResource("FontVariation_yy2qs")
 theme_override_font_sizes/font_size = 12
 text = "00:00"
 horizontal_alignment = 1
