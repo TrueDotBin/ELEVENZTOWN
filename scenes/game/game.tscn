@@ -37,6 +37,9 @@ shader_parameter/alpha = 1.0
 shader_parameter/inner_radius = 0.6
 shader_parameter/outer_radius = 1.92
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_77xa6"]
+size = Vector3(127.83113, 38.380707, 0.109558105)
+
 [node name="Game" type="Node3D" unique_id=1496960987]
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1232866934]
@@ -109,3 +112,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Bounds" type="StaticBody3D" parent="." unique_id=1093061037]
+
+[node name="Collider" type="CollisionShape3D" parent="Bounds" unique_id=173301718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01033783, 19.138596, 63.941563)
+shape = SubResource("BoxShape3D_77xa6")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="Collider2" type="CollisionShape3D" parent="Bounds" unique_id=2043100318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01033783, 19.138596, -64.107544)
+shape = SubResource("BoxShape3D_77xa6")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="Collider3" type="CollisionShape3D" parent="Bounds" unique_id=765492699]
+transform = Transform3D(-0.00077359274, 0, -0.9999997, 0, 1, 0, 0.9999997, 0, -0.00077359274, -64.03487, 19.138596, -0.13251957)
+shape = SubResource("BoxShape3D_77xa6")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="Collider4" type="CollisionShape3D" parent="Bounds" unique_id=1978035278]
+transform = Transform3D(-0.00077359274, 0, -0.9999997, 0, 1, 0, 0.9999997, 0, -0.00077359274, 64.01419, 19.138596, -0.03346172)
+shape = SubResource("BoxShape3D_77xa6")
+debug_color = Color(1, 0, 0, 1)
