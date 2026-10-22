@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl6s4ojg6mc64"
-path="res://.godot/imported/calc.png-a152d51a4d3ee55a49e36c8cbd852067.ctex"
+uid="uid://co1pway48d2hp"
+path="res://.godot/imported/placeholder.png-c4b95d2d63e0401d7731ebbad5ee9c37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/phone/appicons/calc.png"
-dest_files=["res://.godot/imported/calc.png-a152d51a4d3ee55a49e36c8cbd852067.ctex"]
+source_file="res://assets/sprites/placeholder.png"
+dest_files=["res://.godot/imported/placeholder.png-c4b95d2d63e0401d7731ebbad5ee9c37.ctex"]
 
 [params]
 

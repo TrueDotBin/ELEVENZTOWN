@@ -7,10 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://deyo0uelyuxg5" path="res://assets/models/tree1.glb" id="5_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://dmsb1pnsj0dp1" path="res://assets/models/tree2.glb" id="6_87uf6"]
 [ext_resource type="PackedScene" uid="uid://b4w877r4rsln7" path="res://assets/models/tree3.glb" id="7_2a8rs"]
-[ext_resource type="PackedScene" uid="uid://0d8kjskywq7" path="res://scenes/ui/overlays/phone.tscn" id="8_4j704"]
-[ext_resource type="PackedScene" uid="uid://qoxmh2dbryhq" path="res://assets/models/phone.glb" id="8_87uf6"]
-[ext_resource type="Script" uid="uid://dsfvbbx7hcr7w" path="res://scripts/game/items/phone.gd" id="9_2a8rs"]
-[ext_resource type="Script" uid="uid://dkescnstkjc1s" path="res://scripts/ui/effects/button_effects.gd" id="9_kp23o"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_77xa6"]
 
@@ -33,9 +29,6 @@ sky = SubResource("Sky_nurnf")
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_77xa6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_77xa6"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_y6oc2"]
-size = Vector3(3.4837646, 0.22711182, 1.6503906)
 
 [node name="Game" type="Node3D" unique_id=1496960987]
 
@@ -99,32 +92,3 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="PhoneUI" parent="HUD" unique_id=80952348 instance=ExtResource("8_4j704")]
-visible = false
-
-[node name="CloseButton" type="Button" parent="HUD/PhoneUI" unique_id=1938434104]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.009000001
-anchor_top = 0.015000001
-anchor_right = 0.009000001
-anchor_bottom = 0.015000001
-offset_left = -0.36800098
-offset_top = 0.27999973
-offset_right = 39.632
-offset_bottom = 40.28
-theme_type_variation = &"DangerButton"
-text = "X"
-script = ExtResource("9_kp23o")
-
-[node name="Phone" parent="." unique_id=1783339019 node_paths=PackedStringArray("phone_ui") groups=["usable"] instance=ExtResource("8_87uf6")]
-transform = Transform3D(0.24789387, 0, 0.60087323, 0, 0.65, 0, -0.60087323, 0, 0.24789387, -11.838444, 0.075, 18.605082)
-script = ExtResource("9_2a8rs")
-phone_ui = NodePath("../HUD/PhoneUI")
-
-[node name="Collider" type="CollisionShape3D" parent="Phone" unique_id=901817946]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049621582, -0.009185791, 0.016601544)
-shape = SubResource("BoxShape3D_y6oc2")
-
-[connection signal="pressed" from="HUD/PhoneUI/CloseButton" to="Phone" method="_on_close_button_pressed"]
