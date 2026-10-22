@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://c8g6pu8hhxyu7" path="res://assets/sprites/game/grass.png" id="1_7h61r"]
 [ext_resource type="Texture2D" uid="uid://s3m264aoqufl" path="res://assets/sprites/game/sky.png" id="2_0sr1o"]
 [ext_resource type="Script" uid="uid://c7fnvpolr7yog" path="res://scripts/game/player.gd" id="3_0sr1o"]
-[ext_resource type="Script" uid="uid://cmogffra04txe" path="res://scripts/game/trees.gd" id="4_kelw5"]
+[ext_resource type="Script" uid="uid://cmogffra04txe" path="res://scripts/game/scatter.gd" id="4_kelw5"]
 [ext_resource type="PackedScene" uid="uid://deyo0uelyuxg5" path="res://assets/models/tree1.glb" id="5_bdhmt"]
+[ext_resource type="Shader" uid="uid://bhovhrwxnle4d" path="res://shaders/vignette.gdshader" id="5_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://dmsb1pnsj0dp1" path="res://assets/models/tree2.glb" id="6_87uf6"]
 [ext_resource type="PackedScene" uid="uid://b4w877r4rsln7" path="res://assets/models/tree3.glb" id="7_2a8rs"]
 
@@ -29,6 +30,12 @@ sky = SubResource("Sky_nurnf")
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_77xa6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_77xa6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_87uf6"]
+shader = ExtResource("5_lfrn8")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.6
+shader_parameter/outer_radius = 1.92
 
 [node name="Game" type="Node3D" unique_id=1496960987]
 
@@ -65,8 +72,10 @@ shape = SubResource("CapsuleShape3D_77xa6")
 
 [node name="Trees" type="Node3D" parent="." unique_id=1327645443]
 script = ExtResource("4_kelw5")
+amount = 135
 area = Vector2(120, 120)
-trees = Array[PackedScene]([ExtResource("5_bdhmt"), ExtResource("6_87uf6"), ExtResource("7_2a8rs")])
+models = Array[PackedScene]([ExtResource("5_bdhmt"), ExtResource("6_87uf6"), ExtResource("7_2a8rs")])
+max_size = 6.0
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=269544427]
 
@@ -90,5 +99,13 @@ offset_left = -4.0
 offset_top = -4.0
 offset_right = 4.0
 offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Vignette" type="ColorRect" parent="HUD" unique_id=247409419]
+material = SubResource("ShaderMaterial_87uf6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
