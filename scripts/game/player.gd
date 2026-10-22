@@ -18,14 +18,14 @@ enum PlayerState {
 
 var state: PlayerState = PlayerState.NONE
 
-func has_no_state() -> bool:
-	return state == PlayerState.NONE
+func is_not_using_item() -> bool:
+	return state != PlayerState.USING_ITEM
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and has_no_state():
+	if event is InputEventMouseMotion and is_not_using_item():
 		rotate_y(-event.relative.x * sensitivity)
 		camera.rotate_x(-event.relative.y * sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, -PI / 2, PI / 2)
@@ -43,21 +43,13 @@ func _ray() -> void:
 
 	var aimed = result.collider
 
-	if aimed.is_in_group("usable"):
-		if Input.is_action_just_pressed("use") and aimed.has_method("use"):
-			state = PlayerState.USING_ITEM
-			
-			aimed.use()
-			aimed.stopped.connect(func():
-				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-				state = PlayerState.NONE
-			)
+	# TODO: refactor item code here
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if has_no_state():
+	if is_not_using_item():
 		if is_on_floor() and Input.is_action_just_pressed("jump"):
 			velocity.y = jump_velocity
 
