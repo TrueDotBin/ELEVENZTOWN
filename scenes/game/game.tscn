@@ -8,6 +8,7 @@
 [ext_resource type="Shader" uid="uid://bhovhrwxnle4d" path="res://shaders/vignette.gdshader" id="5_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://dmsb1pnsj0dp1" path="res://assets/models/tree2.glb" id="6_87uf6"]
 [ext_resource type="PackedScene" uid="uid://b4w877r4rsln7" path="res://assets/models/tree3.glb" id="7_2a8rs"]
+[ext_resource type="Texture2D" uid="uid://danklk02g3wuf" path="res://assets/sprites/game/phone.png" id="8_2a8rs"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_77xa6"]
 
@@ -104,6 +105,32 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PhoneUIRoot" type="Control" parent="HUD" unique_id=792810948]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/PhoneUIRoot" unique_id=1459324650]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -174.5
+offset_right = 97.0
+offset_bottom = 174.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("8_2a8rs")
 
 [node name="Vignette" type="ColorRect" parent="HUD" unique_id=247409419]
 material = SubResource("ShaderMaterial_87uf6")
